@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<header class="bg-dark py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">Login</h1>
+            <p class="lead fw-normal text-white-50 mb-0">Login to your Account</p>
+        </div>
+    </div>
+</header>
+<div class="contaner">
+    <div class="row">
+        <center>
+            <div class="col-3">
+                <br/><br/>
+                <form>
+                    <div class="mb-3">
+                      <input type="text" class="form-control" name="username" placeholder="UserName">
+                      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label">Password</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <div class="mb-3 form-check">
+                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div>
+                    <button type="submit" class="btn btn-secondary">Login</button>
+                  </form>
+                <br/><br/>
+                <br/><br/>
+            </div>
+        </center>
+    </div>
+</div>
+
+{% endblock %}
