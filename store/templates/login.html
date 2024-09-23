@@ -13,24 +13,22 @@
     <div class="row">
         <center>
             <div class="col-3">
-                <br/><br/>
-                <form>
+                <br/><br/><br/><br/>
+                <form method="POST" action="{% url 'login' %}">
+                  {%csrf_token%}
                     <div class="mb-3">
                       <input type="text" class="form-control" name="username" placeholder="UserName">
-                      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                     </div>
                     <div class="mb-3">
-                      <label for="exampleInputPassword1" class="form-label">Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1">
-                    </div>
-                    <div class="mb-3 form-check">
-                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                      <input type="password" class="form-control" name="password" placeholder="Password">
                     </div>
                     <button type="submit" class="btn btn-secondary">Login</button>
                   </form>
                 <br/><br/>
                 <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                
             </div>
         </center>
     </div>
