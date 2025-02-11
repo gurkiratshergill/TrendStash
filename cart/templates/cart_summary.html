@@ -38,7 +38,7 @@
                 <div class="row justify-content-center">
                 <div class="col-md-2">Quantity:</div>
                 <div class="col-md-3">
-                    <select class="form-select" id="qty-cart">
+                    <select class="form-select" id="select{{product.id}}">
                         <option selected>
                             {% for key, value in quantities.items %}
                                 {% if key == product.id|slugify %}
@@ -56,7 +56,7 @@
                 </div>
                 <br/>
                 <br/>
-                
+                <button type="button" data-index="{{product.id}}" class="btn btn-secondary update-cart">Update Cart</button>
             </center>
             </div>
             </div>
@@ -71,5 +71,33 @@ Cart is Empty
 {% endif%}
 
 
+
+
+<script>
+$(document).on('click', '.update-cart', function(e){
+  e.preventDefault();
+  var productid = $(this).data('index');
+  $.ajax({
+    type: 'POST',
+    url: "{% url 'cart_update'%}",
+    data: {
+      product_id: $(this).data('index'),
+      product_qty: $('#select' + productid + ' option:selected').text(),
+      csrfmiddlewaretoken: '{{ csrf_token }}',
+      action: 'post'
+    },
+
+    success: function(json)
+    {
+      //console.log(json)
+      //document.getElementById("cart_quantity").textContent = json.qty
+        location.reload();
+    },
+    error: function(xhr, errmsg, err){
+      
+    }
+  });
+})    
+</script>
+
 {% endblock %}
-        
