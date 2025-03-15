@@ -24,7 +24,7 @@
               <br/>
               <br/>
               <div class="row justify-content-center">
-                <div class="col-md-2">Quantity:</div>
+                <div class="col-md-3">Quantity:</div>
                 <div class="col-md-3">
                   <select class="form-select" id="qty-cart">
                     <option value="1">1</option>
@@ -66,6 +66,8 @@ $(document).on('click', '#add-cart', function(e){
     {
       //console.log(json)
       document.getElementById("cart_quantity").textContent = json.qty
+
+      location.reload();
 
     },
     error: function(xhr, errmsg, err){
